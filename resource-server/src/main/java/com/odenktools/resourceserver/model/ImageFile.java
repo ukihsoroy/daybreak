@@ -2,7 +2,6 @@ package com.odenktools.resourceserver.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -18,7 +17,6 @@ import java.util.Date;
 @Table(name = "image_files",
 		uniqueConstraints = {@UniqueConstraint(columnNames = {"origin_name"})})
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Data
 public class ImageFile implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -56,4 +54,60 @@ public class ImageFile implements Serializable {
 	@Column(name = "created_at", nullable = false, updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createdAt;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getOriginName() {
+		return originName;
+	}
+
+	public void setOriginName(String originName) {
+		this.originName = originName;
+	}
+
+	public String getShortName() {
+		return shortName;
+	}
+
+	public void setShortName(String shortName) {
+		this.shortName = shortName;
+	}
+
+	public String getFileStatus() {
+		return fileStatus;
+	}
+
+	public void setFileStatus(String fileStatus) {
+		this.fileStatus = fileStatus;
+	}
+
+	public double getSize() {
+		return size;
+	}
+
+	public void setSize(double size) {
+		this.size = size;
+	}
+
+	public Boolean getActive() {
+		return isActive;
+	}
+
+	public void setActive(Boolean active) {
+		isActive = active;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
 }

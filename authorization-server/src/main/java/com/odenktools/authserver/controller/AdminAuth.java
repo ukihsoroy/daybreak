@@ -23,8 +23,6 @@ import java.util.Optional;
 
 /**
  * Oauth2 Admin Api Management.
- *
- * @author Odenktools.
  */
 @RestController
 @RequestMapping("/api/v1/admin")

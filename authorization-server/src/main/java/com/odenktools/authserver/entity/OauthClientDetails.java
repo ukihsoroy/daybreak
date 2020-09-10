@@ -15,11 +15,6 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.*;
 
-/**
- * @author Odenktools.
- */
-@JsonSerialize
-@ToString
 @Entity(name = "OauthClientDetails")
 @Table(name = "oauth_client_details")
 @SuppressWarnings("serial")
@@ -207,5 +202,54 @@ public class OauthClientDetails implements ClientDetails, Serializable {
 		} catch (IOException e) {
 			this.additionalInformation = "";
 		}
+	}
+
+	public OauthClientDetails() {
+	}
+
+	public OauthClientDetails(String clientId, String clientSecret, String resourceIds, String scope, String authorizedGrantTypes, String registeredRedirectUri, String authorities, Integer accessTokenValiditySeconds, Integer refreshTokenValiditySeconds, String autoApproveScope, String additionalInformation) {
+		this.clientId = clientId;
+		this.clientSecret = clientSecret;
+		this.resourceIds = resourceIds;
+		this.scope = scope;
+		this.authorizedGrantTypes = authorizedGrantTypes;
+		this.registeredRedirectUri = registeredRedirectUri;
+		this.authorities = authorities;
+		this.accessTokenValiditySeconds = accessTokenValiditySeconds;
+		this.refreshTokenValiditySeconds = refreshTokenValiditySeconds;
+		this.autoApproveScope = autoApproveScope;
+		this.additionalInformation = additionalInformation;
+	}
+
+	public static ObjectMapper getMapper() {
+		return mapper;
+	}
+
+	public void setResourceIds(String resourceIds) {
+		this.resourceIds = resourceIds;
+	}
+
+	public void setScope(String scope) {
+		this.scope = scope;
+	}
+
+	public void setAuthorizedGrantTypes(String authorizedGrantTypes) {
+		this.authorizedGrantTypes = authorizedGrantTypes;
+	}
+
+	public void setRegisteredRedirectUri(String registeredRedirectUri) {
+		this.registeredRedirectUri = registeredRedirectUri;
+	}
+
+	public void setAuthorities(String authorities) {
+		this.authorities = authorities;
+	}
+
+	public void setAutoApproveScope(String autoApproveScope) {
+		this.autoApproveScope = autoApproveScope;
+	}
+
+	public void setAdditionalInformation(String additionalInformation) {
+		this.additionalInformation = additionalInformation;
 	}
 }

@@ -3,7 +3,7 @@ package com.odenktools.authserver.service.impl;
 import com.mysema.query.jpa.impl.JPAQuery;
 import com.odenktools.authserver.dto.group.GroupDto;
 import com.odenktools.authserver.entity.Group;
-import com.odenktools.authserver.entity.QGroup;
+//import com.odenktools.authserver.entity.QGroup;
 import com.odenktools.authserver.filter.QueryFilter;
 import com.odenktools.authserver.repository.IGroup;
 import com.odenktools.authserver.service.GroupService;
@@ -48,21 +48,22 @@ public class GroupServiceImpl extends QueryFilter<Group> implements GroupService
 	@Transactional(readOnly = true)
 	public Page<Group> findUserByNamedOrCoded(String named, String coded, Sort sort, Pageable pageable) {
 
-		QGroup qGroup = QGroup.group;
-		JPAQuery query = new JPAQuery(this.entityManager).from(qGroup);
-		if (named != null && !named.isEmpty()) {
-			query.where(qGroup.named.containsIgnoreCase(named));
-		}
-		if (coded != null && !coded.isEmpty()) {
-			query.where(qGroup.coded.containsIgnoreCase(coded));
-		}
-		long total = query.count();
-		query.offset(pageable.getOffset());
-		query.limit(pageable.getPageSize());
-		for (Sort.Order order : sort) {
-			query.orderBy(this.toOrderSpecifier(Group.class, qGroup.getMetadata(), order));
-		}
-		return new RestResponsePage<>(query.list(qGroup), pageable, total);
+//		QGroup qGroup = QGroup.group;
+//		JPAQuery query = new JPAQuery(this.entityManager).from(qGroup);
+//		if (named != null && !named.isEmpty()) {
+//			query.where(qGroup.named.containsIgnoreCase(named));
+//		}
+//		if (coded != null && !coded.isEmpty()) {
+//			query.where(qGroup.coded.containsIgnoreCase(coded));
+//		}
+//		long total = query.count();
+//		query.offset(pageable.getOffset());
+//		query.limit(pageable.getPageSize());
+//		for (Sort.Order order : sort) {
+//			query.orderBy(this.toOrderSpecifier(Group.class, qGroup.getMetadata(), order));
+//		}
+//		return new RestResponsePage<>(query.list(qGroup), pageable, total);
+		return null;
 	}
 
 	@Override

@@ -7,8 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * Bootstap Apps.
- *
- * @author Odenktools.
  */
 @SpringBootApplication
 public class ResourceserverApplication {
