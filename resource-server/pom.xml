@@ -68,6 +68,14 @@
                     <includeTestResources>false</includeTestResources>
                 </configuration>
 
+                <dependencies>
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>${maven-checkstyle-plugin.version}</version>
+                    </dependency>
+                </dependencies>
+
                 <executions>
                     <execution>
                         <id>verify-style</id>

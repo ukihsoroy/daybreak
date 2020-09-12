@@ -72,7 +72,7 @@
                     <dependency>
                         <groupId>com.puppycrawl.tools</groupId>
                         <artifactId>checkstyle</artifactId>
-                        <version>${checkstyle.version}</version>
+                        <version>${maven-checkstyle-plugin.version}</version>
                     </dependency>
                 </dependencies>
 

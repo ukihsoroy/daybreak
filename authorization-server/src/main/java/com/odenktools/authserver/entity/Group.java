@@ -3,28 +3,17 @@ package com.odenktools.authserver.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import jdk.nashorn.internal.ir.annotations.Immutable;
-import lombok.*;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
-@Entity(name = "Group")
-@Table(name = "groups",
-		uniqueConstraints = {@UniqueConstraint(columnNames = {"named", "coded"})})
 public class Group implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id", nullable = false)
 	private Long id;
 
-	@Column(name = "named", nullable = false)
 	private String named;
 
 	/**
@@ -35,24 +24,17 @@ public class Group implements Serializable {
 	 * coded = ROLE_ADMIN_MOBILE (UPPERCASE, hapus SPACE menjadi UNDERSCORES, Tambahkan ROLE_)
 	 * </p>
 	 */
-	@Column(name = "coded", nullable = false, updatable = false)
 	private String coded;
 
-	@Column(name = "named_description", nullable = false)
 	private String namedDescription;
 
-	@Column(name = "is_active", nullable = false)
 	private int isActive;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "created_at", updatable = false)
 	@JsonProperty("created_at")
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
 	private Date createdAt;
 
-	@Temporal(TemporalType.TIMESTAMP)
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
-	@Column(name = "updated_at")
 	private Date updatedAt;
 
 	public Group(
@@ -97,7 +79,6 @@ public class Group implements Serializable {
 	/**
 	 * Sets created_at before insert.
 	 */
-	@PrePersist
 	public void setCreationDate() {
 
 		this.createdAt = new Date();
@@ -106,7 +87,6 @@ public class Group implements Serializable {
 	/**
 	 * Sets updated_at before update.
 	 */
-	@PreUpdate
 	public void setChangedDate() {
 
 		this.updatedAt = new Date();
@@ -115,19 +95,8 @@ public class Group implements Serializable {
 	/**
 	 * Permission for Customers (Not For Admin)
 	 */
-	@ManyToMany(fetch = FetchType.EAGER, cascade = {
-			CascadeType.PERSIST,
-			CascadeType.MERGE
-	})
-	@JoinTable(name = "permissions_rel",
-			joinColumns = @JoinColumn(name = "role_id"),
-			inverseJoinColumns = @JoinColumn(name = "perm_id")
-	)
-	@JsonIgnore
 	private Set<Permission> usersPermissions;
 
-	@ManyToMany(mappedBy = "usersGroups")
-	@JsonIgnore
 	private Set<Customer> users;
 
 	public void customAddPermission(Permission usersPermissions) {
