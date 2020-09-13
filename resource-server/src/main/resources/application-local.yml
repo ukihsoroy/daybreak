@@ -8,7 +8,7 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:postgresql://localhost:5432/spring_auth_res
     username: ${POSTGRESQL_USERNAME:postgres}
-    password: ${POSTGRESQL_PASSWORD:odenktools}
+    password: ${POSTGRESQL_PASSWORD:tiger}
   jpa:
     open-in-view: false
     hibernate:

@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 
 /**
  * Application Configuration.
+ *
+ * @author Odenktools.
  */
 @Configuration
 @Component

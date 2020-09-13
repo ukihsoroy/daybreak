@@ -16,6 +16,14 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
+/**
+ * @author Odenktools
+ */
+@Getter
+@Setter
+@JsonSerialize
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity(name = "Permission")
 @Table(name = "permissions",
 		uniqueConstraints = {@UniqueConstraint(columnNames = {"name_permission", "readable_name"})})
@@ -92,63 +100,4 @@ public class Permission implements Serializable {
 
 	@ManyToMany(mappedBy = "usersPermissions")
 	private Set<Group> usersGroups;
-
-	public Permission() {
-	}
-
-	public Long getIdPerm() {
-		return idPerm;
-	}
-
-	public void setIdPerm(Long idPerm) {
-		this.idPerm = idPerm;
-	}
-
-	public String getNamePermission() {
-		return namePermission;
-	}
-
-	public void setNamePermission(String namePermission) {
-		this.namePermission = namePermission;
-	}
-
-	public String getReadableName() {
-		return readableName;
-	}
-
-	public void setReadableName(String readableName) {
-		this.readableName = readableName;
-	}
-
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
-
-	public Date getDeletedAt() {
-		return deletedAt;
-	}
-
-	public void setDeletedAt(Date deletedAt) {
-		this.deletedAt = deletedAt;
-	}
-
-	public Set<Group> getUsersGroups() {
-		return usersGroups;
-	}
-
-	public void setUsersGroups(Set<Group> usersGroups) {
-		this.usersGroups = usersGroups;
-	}
 }
