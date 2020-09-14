@@ -1,5 +1,8 @@
 package com.odenktools.resourceserver.util;
 
+/**
+ * @author K.O
+ */
 public class SuffixBean {
 	private String suffix;
 
@@ -7,14 +10,17 @@ public class SuffixBean {
 		this.suffix = suffix;
 	}
 
+	@Override
 	public String toString() {
 		return suffix.toLowerCase();
 	}
 
+	@Override
 	public int hashCode() {
 		return suffix.toLowerCase().hashCode();
 	}
 
+	@Override
 	public boolean equals(Object target) {
 		if (target != null && target instanceof SuffixBean) {
 			SuffixBean suf = (SuffixBean) target;
