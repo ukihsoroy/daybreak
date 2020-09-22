@@ -276,18 +276,7 @@ curl --request DELETE \
   --url http://localhost:8090/api/v1/admin/group/delete/{{GROUP_ID}} \
   --header 'Authorization: Bearer {{YOUR_ACCESS_TOKEN}}' \
   --header 'Content-Type: application/json'
-```
-
-Result
-
-```json
-{
-    "code": 200,
-    "messages": "Group was successfuly removed."
-}
-```
-
-## Build Application from source
+```  m source
 
 First clone this repo. To build the sources you need to have [Gradle 4x](https://gradle.org/install/) installed.
 

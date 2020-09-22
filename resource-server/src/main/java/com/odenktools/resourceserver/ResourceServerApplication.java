@@ -9,10 +9,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Odenktools.
  */
 @SpringBootApplication
-public class ResourceserverApplication {
+public class ResourceServerApplication {
 
 	public static void main(String[] args) {
 
-		SpringApplication.run(ResourceserverApplication.class, args);
+		SpringApplication.run(ResourceServerApplication.class, args);
 	}
 }
