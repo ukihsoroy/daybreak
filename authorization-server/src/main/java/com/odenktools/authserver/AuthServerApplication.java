@@ -13,13 +13,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Odenktools.
  */
 @SpringBootApplication
-public class AuthserverApplication implements CommandLineRunner {
+public class AuthServerApplication implements CommandLineRunner {
 
-	private static final Logger LOG = LoggerFactory.getLogger(AuthserverApplication.class);
+	private static final Logger LOG = LoggerFactory.getLogger(AuthServerApplication.class);
 
 	public static void main(String[] args) {
 
-		SpringApplication.run(AuthserverApplication.class, args);
+		SpringApplication.run(AuthServerApplication.class, args);
 
 		LOG.info("PASSWORD FOR server-server = {}", new CustomPasswordEncoder().encode("server-server"));
 		LOG.info("PASSWORD FOR android-client = {}", new CustomPasswordEncoder().encode("android-client"));
