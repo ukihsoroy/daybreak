@@ -9,11 +9,17 @@ spring:
     allowed-headers: "*"
     exposed-headers: "Authorization,Link,X-Total-Count"
     allow-credentials: true
+  thymeleaf:
+    encoding: utf-8
+    prefix: 'classpath:/templates/'
+    suffix: '.html'
+    cache: false
 server:
   port: ${PORT:8090}
   servlet:
     session:
       cookie:
         name: JWT_SESSIONID
+    context-path: /auth
   jetty:
     acceptors: 4
