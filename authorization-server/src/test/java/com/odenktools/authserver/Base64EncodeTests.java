@@ -9,7 +9,6 @@ public class Base64EncodeTests {
     /**
      * android-client:android-client YW5kcm9pZC1jbGllbnQ6YW5kcm9pZC1jbGllbnQ=
      * server-server:server-server c2VydmVyLXNlcnZlcjpzZXJ2ZXItc2VydmVy
-     *
      */
 
     @Test
