@@ -203,7 +203,6 @@ public class AdminAuth {
 
 	/**
 	 * Delete existing group.
-	 *
 	 * @param id Group "id" do you want to delete.
 	 * @return JsonObject.
 	 */

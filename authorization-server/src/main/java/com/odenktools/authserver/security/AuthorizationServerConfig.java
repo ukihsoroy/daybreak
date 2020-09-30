@@ -143,7 +143,6 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	@Bean
 	@Primary
 	public PasswordEncoder passwordEncoder() {
-
 		return new CustomPasswordEncoder();
 	}
 

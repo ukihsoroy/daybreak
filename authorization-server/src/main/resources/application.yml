@@ -20,6 +20,5 @@ server:
     session:
       cookie:
         name: JWT_SESSIONID
-    context-path: /auth
   jetty:
     acceptors: 4
