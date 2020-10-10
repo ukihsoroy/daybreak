@@ -41,8 +41,9 @@ public class AdminAuth {
 
 	/**
 	 * Check Authorize.
+	 * 查看用户权限
 	 *
-	 * @param principal Pricipal Person.
+	 * @param principal Pricipal Person. 登陆后的jwt里面带有该参数
 	 * @return JsonObject.
 	 */
 	@GetMapping(value = "/me",
@@ -63,6 +64,7 @@ public class AdminAuth {
 
 	/**
 	 * Get all available groups on database.
+	 * 组的概念
 	 *
 	 * @param name search by name.
 	 * @param coded search by coded.

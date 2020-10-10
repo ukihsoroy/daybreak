@@ -19,6 +19,8 @@ If you feel happy **Give me a STAR** to this **repository**.
 * File upload API (Using Oauth2 Resource Server)
 * How to use Validation.
 * How to integrating QueryDSL into JPA.
+* MyBatis Plus
+* Exclude lombok
 
 ## Oauth2 user credential
 
